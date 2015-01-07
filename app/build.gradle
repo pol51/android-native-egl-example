@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 10
+    buildToolsVersion "21.1.1"
+
+    defaultConfig {
+        applicationId "tsaarni.nativeeglexample"
+        minSdkVersion 5
+        targetSdkVersion 11
+
+        ndk {
+            moduleName "nativeegl"
+            ldLibs "log","android", "EGL", "GLESv1_CM"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
